@@ -18,10 +18,11 @@ Telegram::Bot::Client.run(token) do |bot|
     case message.text
     when '/start'
       properties = {
-        platform: 'telegram'
+        platform: 'telegram',
+        command: 'start'
       }
 
-      v.track(message.from.id, 'start', message, properties)
+      v.track(message, message.from.id, properties)
 
       # ...
     end
