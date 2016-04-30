@@ -12,7 +12,7 @@ __PLEASE NOTE:__ THIS IS A PROOF OF CONCEPT AND THE API IS NOT YET ACCESSIBLE
 require 'telegram/bot'
 
 Telegram::Bot::Client.run(token) do |bot|
-  v = Dialog.new(api_token: 'dialog_api_token')
+  dialog = Dialog.new(api_token: 'dialog_api_token')
 
   bot.listen do |message|
     case message.text
@@ -22,7 +22,7 @@ Telegram::Bot::Client.run(token) do |bot|
         command: 'start'
       }
 
-      v.track(message, message.from.id, properties)
+      dialog.track(message, message.from.id, properties)
 
       # ...
     end
