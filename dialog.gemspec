@@ -4,17 +4,14 @@ $:.unshift File.expand_path('../lib', __FILE__)
 require 'dialog/version'
 
 Gem::Specification.new do |s|
-  s.name          = "dialog"
+  s.name          = "dialog-ruby"
   s.version       = Dialog::VERSION
   s.authors       = ["Philippe Dionne"]
-  s.email         = ["dionne.phil@gmail.com"]
-  s.homepage      = "https://github.com/dialog/dialog-ruby"
+  s.email         = ["p@dialoganalytics.com"]
+  s.homepage      = "https://github.com/phildionne/dialog-ruby"
   s.licenses      = ['MIT']
-  s.summary       = "Dialog - conversational analytics"
-  s.description   = "Dialog - conversational analytics"
-
-  # s.cert_chain  = ['certs/pdionne-gem-public_cert.pem']
-  # s.signing_key = File.expand_path("~/.gem/pdionne-gem-private_key.pem") if $0 =~ /gem\z/
+  s.summary       = "Dialog - Conversational analytics"
+  s.description   = "Dialog - Conversational analytics"
 
   s.files         = `git ls-files lib`.split("\n")
   s.platform      = Gem::Platform::RUBY
