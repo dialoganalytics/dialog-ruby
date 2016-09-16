@@ -1,6 +1,15 @@
 module Dialog
   module Request
 
+    # Performs a HTTP Get request
+    #
+    # @param path [String]
+    # @param params [Hash]
+    # @param body [Hash]
+    def get(path, params={})
+      request(:get, path, params)
+    end
+
     # Performs a HTTP Post request
     #
     # @param path [String]
@@ -18,7 +27,7 @@ module Dialog
     # @param method [Symbol]
     # @param path [String]
     # @param params [Hash]
-    # @param body [Hash] 
+    # @param body [Hash]
     # @return [Faraday::Response]
     def request(method, path, params={}, body={})
       raise ArgumentError, ("Please configure Dialog.api_token first") unless api_token
