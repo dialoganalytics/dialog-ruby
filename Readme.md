@@ -1,6 +1,8 @@
 # Dialog Ruby
 
-A ruby client for the [Dialog](https://dialoganalytics.com) conversational analytics API.
+A ruby client for the [Dialog](https://dialoganalytics.com) API.
+
+[![Dependency Status](https://gemnasium.com/badges/github.com/dialoganalytics/dialog-node.svg)](https://gemnasium.com/github.com/dialoganalytics/dialog-node)
 
 ## Documentation
 
