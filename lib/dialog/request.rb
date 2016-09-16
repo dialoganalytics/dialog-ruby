@@ -23,10 +23,9 @@ module Dialog
     def request(method, path, params={}, body={})
       raise ArgumentError, ("Please configure Dialog.api_token first") unless api_token
 
-      params = { token: api_token }.merge(params)
-
       response = connection.send(method) do |request|
         request.url(path, params)
+        request.headers['HTTP_AUTHORIZATION'] = api_token
         request.body = body.to_json
       end
 
