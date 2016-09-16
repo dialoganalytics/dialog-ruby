@@ -1,31 +1,56 @@
-# Dialog-ruby
+# Dialog Ruby
 
-A ruby client for the [Dialog](https://dialog.io) conversational analytics api.
+A ruby client for the [Dialog](https://dialoganalytics.com) conversational analytics API.
 
-__PLEASE NOTE:__ THIS IS A PROOF OF CONCEPT AND THE API IS NOT YET ACCESSIBLE
+## Documentation
+
+See the [API docs](https://docs.dialoganalytics.com).
+
+## Installation
+
+```bash
+gem install dialog-ruby
+```
+
+Or with bundler:
+
+```ruby
+gem 'dialog-ruby'
+```
 
 ## Usage
+
+This library needs to be configured with your API token which is available in your [personal account](http://app.dialoganalytics.com/users/edit).
+
+```ruby
+dialog = Dialog.new(api_token: 'dialog_api_token')
+```
+
+## Examples
 
 ### Telegram
 
 ```ruby
 require 'telegram/bot'
 
-Telegram::Bot::Client.run(token) do |bot|
+Telegram::Bot::Client.run(telegram_token) do |bot|
   dialog = Dialog.new(api_token: 'dialog_api_token')
 
   bot.listen do |message|
     case message.text
     when '/start'
-      properties = {
-        platform: 'telegram',
-        command: 'start'
-      }
-
-      dialog.track(message, message.from.id, properties)
+      dialog.track()
 
       # ...
     end
   end
 end
+```
+
+## Development
+
+Run all tests:
+
+```bash
+bundle exec rspec
 ```
