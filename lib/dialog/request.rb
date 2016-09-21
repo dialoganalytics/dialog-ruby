@@ -1,4 +1,5 @@
 require 'http'
+require 'dialog/error'
 
 module Dialog
   module Request
@@ -36,6 +37,8 @@ module Dialog
 
       response = Http.headers(headers).send(method, path, params: params, json: body)
 
+      # Raise on 400 to 599 HTTP errors
+      raise Dialog::Error.new(response) if (400..599).include?(response.code)
 
       # Return parsed json body
       response.parse
