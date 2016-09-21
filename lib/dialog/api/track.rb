@@ -2,19 +2,27 @@ module Dialog
   module API
     module Track
 
-      # @param message [String]
-      # @param uid [String]
-      # @param properties [Hash]
-      def track(message, uid=nil, properties = {})
+      # Tracks a message
+      # @param payload [Hash]
+      # @return
+      def track(payload)
         body = {
           message: {
-            uid: uid,
-            message: message,
-            properties: properties
+            conversation_distinct_id: payload[:conversation_distinct_id],
+            creator_distinct_id: payload[:creator_distinct_id],
+            creator_type: payload[:creator_type],
+            distinct_id: payload[:distinct_id],
+            platform: payload[:platform],
+            provider: payload[:provider],
+            mtype: payload[:mtype],
+            sent_at: payload[:sent_at],
+            properties: {
+              text: payload[:text]
+            }
           }
         }
 
-        post("/track", {}, body)
+        post("b/#{bot_id}/track", json: body)
       end
     end
   end

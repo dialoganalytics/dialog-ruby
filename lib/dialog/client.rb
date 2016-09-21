@@ -1,11 +1,17 @@
 require 'dialog/request'
-require 'dialog/api/conversations'
-require 'dialog/api/interlocutors'
-require 'dialog/api/messages'
+require 'dialog/api/conversation'
+require 'dialog/api/interlocutor'
+require 'dialog/api/message'
 require 'dialog/api/track'
 
 module Dialog
   class Client
+    include Dialog::Request
+    include Dialog::API::Conversation
+    include Dialog::API::Interlocutor
+    include Dialog::API::Message
+    include Dialog::API::Track
+
     attr_accessor *Configuration::VALID_OPTIONS_KEYS
 
     # @param options [Hash]
@@ -16,11 +22,5 @@ module Dialog
       end
     end
 
-    include Dialog::Connection
-    include Dialog::Request
-    include Dialog::API::Conversations
-    include Dialog::API::Interlocutors
-    include Dialog::API::Messages
-    include Dialog::API::Track
   end
 end
