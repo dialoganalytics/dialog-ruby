@@ -4,7 +4,7 @@ module Dialog
   module Configuration
     VALID_OPTIONS_KEYS    = [:api_endpoint, :api_token, :user_agent, :bot_id].freeze
 
-    DEFAULT_API_ENDPOINT  = "https://api.dialoganalytics.com/v1"
+    DEFAULT_API_ENDPOINT  = "https://api.dialoganalytics.com/v1/"
     DEFAULT_API_TOKEN     = nil
     DEFAULT_USER_AGENT    = "Dialog Ruby Gem #{Dialog::VERSION}".freeze
 
