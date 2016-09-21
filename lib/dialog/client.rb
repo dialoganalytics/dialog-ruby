@@ -1,4 +1,3 @@
-require 'dialog/connection'
 require 'dialog/request'
 require 'dialog/api/conversations'
 require 'dialog/api/interlocutors'

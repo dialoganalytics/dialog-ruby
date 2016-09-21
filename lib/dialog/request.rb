@@ -1,3 +1,5 @@
+require 'http'
+
 module Dialog
   module Request
 
@@ -5,9 +7,8 @@ module Dialog
     #
     # @param path [String]
     # @param params [Hash]
-    # @param body [Hash]
-    def get(path, params={})
-      request(:get, path, params)
+    def get(path, params: {})
+      request(:get, URI.parse(api_endpoint).merge(path), params: params)
     end
 
     # Performs a HTTP Post request
@@ -15,30 +16,29 @@ module Dialog
     # @param path [String]
     # @param params [Hash]
     # @param body [Hash]
-    def post(path, params={}, body={})
-      request(:post, path, params, body)
+    def post(path, params: {}, body: {})
+      request(:post, URI.parse(api_endpoint).merge(path), params: params, body: body)
     end
 
 
     private
 
-    # Returns a Faraday::Response object
-    #
-    # @param method [Symbol]
-    # @param path [String]
-    # @param params [Hash]
-    # @param body [Hash]
-    # @return [Faraday::Response]
-    def request(method, path, params={}, body={})
+    # @return [HTTP::Client]
+    def request(method, path, params: {}, body: {})
       raise ArgumentError, ("Please configure Dialog.api_token first") unless api_token
+      raise ArgumentError, ("Please configure Dialog.bot_id first") unless bot_id
 
-      response = connection.send(method) do |request|
-        request.url(path, params)
-        request.headers['HTTP_AUTHORIZATION'] = api_token
-        request.body = body.to_json
-      end
+      headers = {
+        'accept' => "application/json",
+        'User-Agent' => Dialog.user_agent,
+        'Authorization' => "Api-Key #{api_token}"
+      }
 
-      response.body
+      response = Http.headers(headers).send(method, path, params: params, json: body)
+
+
+      # Return parsed json body
+      response.parse
     end
   end
 end

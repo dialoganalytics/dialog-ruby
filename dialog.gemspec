@@ -18,6 +18,5 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.test_files    = s.files.grep(%r{^(spec)/})
 
-  s.add_dependency 'faraday', '~> 0.8'
-  s.add_dependency 'faraday_middleware'
+  s.add_dependency 'http'
 end
