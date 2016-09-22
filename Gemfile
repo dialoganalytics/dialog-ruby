@@ -10,7 +10,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl'
   gem 'coveralls', require: false
   gem 'rspec', '~> 3.4'
 end
