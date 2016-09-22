@@ -1,5 +1,5 @@
-require 'dialog/configuration'
-require 'dialog/client'
+require 'dialog-api/configuration'
+require 'dialog-api/client'
 
 module Dialog
   extend Configuration

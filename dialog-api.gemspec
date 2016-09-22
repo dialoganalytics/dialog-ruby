@@ -1,10 +1,10 @@
 # encoding: utf-8
 
 $:.unshift File.expand_path('../lib', __FILE__)
-require 'dialog/version'
+require 'dialog-api/version'
 
 Gem::Specification.new do |s|
-  s.name          = "dialog-ruby"
+  s.name          = "dialog-api"
   s.version       = Dialog::VERSION
   s.authors       = ["Philippe Dionne"]
   s.email         = ["p@dialoganalytics.com"]

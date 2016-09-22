@@ -1,8 +1,8 @@
-require 'dialog/request'
-require 'dialog/api/conversation'
-require 'dialog/api/interlocutor'
-require 'dialog/api/message'
-require 'dialog/api/track'
+require 'dialog-api/request'
+require 'dialog-api/api/conversation'
+require 'dialog-api/api/interlocutor'
+require 'dialog-api/api/message'
+require 'dialog-api/api/track'
 
 module Dialog
   class Client

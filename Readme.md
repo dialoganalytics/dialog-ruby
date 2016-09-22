@@ -11,13 +11,13 @@ See the [API docs](https://docs.dialoganalytics.com).
 ## Installation
 
 ```bash
-gem install dialog-ruby
+gem install dialog-api
 ```
 
 Or with bundler:
 
 ```ruby
-gem 'dialog-ruby'
+gem 'dialog-api', require: 'dialog-api'
 ```
 
 ## Usage

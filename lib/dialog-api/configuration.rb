@@ -1,4 +1,4 @@
-require 'dialog/version'
+require 'dialog-api/version'
 
 module Dialog
   module Configuration
