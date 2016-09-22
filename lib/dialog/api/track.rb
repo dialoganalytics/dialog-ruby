@@ -22,7 +22,7 @@ module Dialog
           }
         }
 
-        post("b/#{bot_id}/track", json: body)
+        post("b/#{bot_id}/track", body: body)
       end
     end
   end
