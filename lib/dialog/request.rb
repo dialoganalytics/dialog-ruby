@@ -1,5 +1,4 @@
 require 'http'
-require 'dialog/error'
 
 module Dialog
   module Request
@@ -25,6 +24,7 @@ module Dialog
     private
 
     # @return [HTTP::Client]
+    # @raise [ArgumentError]
     def request(method, path, params: {}, body: {})
       raise ArgumentError, ("Please configure Dialog.api_token first") unless api_token
       raise ArgumentError, ("Please configure Dialog.bot_id first") unless bot_id
@@ -37,8 +37,16 @@ module Dialog
 
       response = Http.headers(headers).send(method, path, params: params, json: body)
 
-      # Raise on 400 to 599 HTTP errors
-      raise Dialog::Error.new(response) if (400..599).include?(response.code)
+      # Pass on errors when HTTP status included in 400 to 599
+      if (400..599).include?(response.code)
+        begin
+          body = response.parse['error']
+        rescue HTTP::Error
+          body = nil
+        end
+
+        on_error.call(response.code, response.reason, body)
+      end
 
       # Return parsed json body
       response.parse

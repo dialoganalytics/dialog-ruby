@@ -2,7 +2,7 @@ require 'dialog/version'
 
 module Dialog
   module Configuration
-    VALID_OPTIONS_KEYS    = [:api_endpoint, :api_token, :user_agent, :bot_id].freeze
+    VALID_OPTIONS_KEYS    = [:api_endpoint, :api_token, :user_agent, :bot_id, :on_error].freeze
 
     DEFAULT_API_ENDPOINT  = "https://api.dialoganalytics.com/v1/"
     DEFAULT_API_TOKEN     = nil
@@ -27,6 +27,7 @@ module Dialog
       self.api_endpoint = DEFAULT_API_ENDPOINT
       self.api_token    = DEFAULT_API_TOKEN
       self.user_agent   = DEFAULT_USER_AGENT
+      self.on_error     = Proc.new {}
       self.bot_id       = nil
 
       return true
