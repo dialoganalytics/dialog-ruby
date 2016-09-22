@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.version       = Dialog::VERSION
   s.authors       = ["Philippe Dionne"]
   s.email         = ["p@dialoganalytics.com"]
-  s.homepage      = "https://github.com/phildionne/dialog-ruby"
+  s.homepage      = "https://github.com/dialoganalytics/dialog-ruby"
   s.licenses      = ['MIT']
-  s.summary       = "Dialog - Conversational analytics"
-  s.description   = "Dialog - Conversational analytics"
+  s.summary       = "A ruby client for the Dialog API."
+  s.description   = "Dialog is a conversational analytics platform. See https://dialoganalytics.com for details."
 
   s.files         = `git ls-files lib`.split("\n")
   s.platform      = Gem::Platform::RUBY
