@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.test_files    = s.files.grep(%r{^(spec)/})
 
-  s.add_dependency 'http'
+  s.add_dependency 'http', '~> 2.0'
 end
