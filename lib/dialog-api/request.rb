@@ -30,9 +30,9 @@ module Dialog
       raise ArgumentError, ("Please configure Dialog.bot_id first") unless bot_id
 
       headers = {
-        'accept' => "application/json",
-        'User-Agent' => Dialog.user_agent,
-        'Authorization' => "Api-Key #{api_token}"
+        'Accept'        => "application/json",
+        'Authorization' => "Api-Key #{api_token}",
+        'User-Agent'    => Dialog.user_agent
       }
 
       response = Http.headers(headers).send(method, path, params: params, json: body)
