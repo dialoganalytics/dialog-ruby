@@ -8,9 +8,6 @@ module Dialog
       def track(payload)
         body = {
           message: {
-            conversation_distinct_id: payload[:conversation_distinct_id],
-            creator_distinct_id: payload[:creator_distinct_id],
-            creator_type: payload[:creator_type],
             distinct_id: payload[:distinct_id],
             platform: payload[:platform],
             provider: payload[:provider],
@@ -19,6 +16,13 @@ module Dialog
             properties: {
               text: payload[:text]
             }
+          },
+          conversation: {
+            distinct_id: payload[:conversation_distinct_id]
+          },
+          creator: {
+            distinct_id: payload[:creator_distinct_id],
+            type: payload[:creator_type]
           }
         }
 

@@ -31,14 +31,18 @@ class DialogTwilio
   # @param params [Hash]
   def incoming(params)
     payload = {
-      creator_distinct_id: params['From'],
-      creator_type: 'interlocutor',
-      distinct_id: params['MessageSid'],
-      sent_at: Time.now.to_f,
-      properties: {
-        text: params['Body']
+      message: {
+        distinct_id: params['MessageSid'],
+        sent_at: Time.now.to_f,
+        properties: {
+          text: params['Body']
+        },
+      },
+      creator: {
+        distinct_id: params['From'],
+        type: 'interlocutor'
       }
-    }.merge(dialog_attributes(params))
+    }.deep_merge(dialog_attributes(params))
 
     @client.track(payload)
   end
@@ -47,14 +51,18 @@ class DialogTwilio
   # @param message [String]
   def outgoing(params, message)
     payload = {
-      creator_distinct_id: 'bot_id',
-      creator_type: 'bot',
-      distinct_id: SecureRandom.uuid,
-      sent_at: Time.now.to_f,
-      properties: {
-        text: message
+      message: {
+        distinct_id: SecureRandom.uuid,
+        sent_at: Time.now.to_f,
+        properties: {
+          text: message
+        }
+      },
+      creator: {
+        creator_distinct_id: 'bot_id',
+        creator_type: 'bot'
       }
-    }.merge(dialog_attributes(params))
+    }.deep_merge(dialog_attributes(params))
 
     @client.track(payload)
   end
@@ -64,10 +72,14 @@ class DialogTwilio
   # @param params [Hash]
   def dialog_attributes(params)
     {
-      conversation_distinct_id: (params['From'] + params['To']).strip,
-      platform: 'sms',
-      provider: 'twilio',
-      mtype: 'text',
+      message: {
+        platform: 'sms',
+        provider: 'twilio',
+        mtype: 'text'
+      },
+      conversation: {
+        distinct_id: (params['From'] + params['To']).strip
+      }
     }
   end
 end
