@@ -2,7 +2,7 @@
 
 A ruby client for the [Dialog](https://dialoganalytics.com) API.
 
-[![Dependency Status](https://gemnasium.com/badges/github.com/dialoganalytics/dialog-node.svg)](https://gemnasium.com/github.com/dialoganalytics/dialog-node)
+[![Dependency Status](https://gemnasium.com/badges/github.com/dialoganalytics/dialog-ruby.svg)](https://gemnasium.com/github.com/dialoganalytics/dialog-ruby)
 [![Gem Version](https://badge.fury.io/rb/dialog-api.svg)](https://badge.fury.io/rb/dialog-api)
 
 ## Documentation
