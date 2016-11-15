@@ -26,7 +26,7 @@ module Dialog
           }
         }
 
-        post("b/#{bot_id}/track", body: body)
+        async.post("b/#{bot_id}/track", body: body)
       end
     end
   end

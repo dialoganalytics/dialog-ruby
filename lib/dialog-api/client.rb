@@ -1,3 +1,5 @@
+require 'concurrent'
+
 require 'dialog-api/request'
 require 'dialog-api/api/conversation'
 require 'dialog-api/api/interlocutor'
@@ -6,6 +8,8 @@ require 'dialog-api/api/track'
 
 module Dialog
   class Client
+    include Concurrent::Async
+
     include Dialog::Request
     include Dialog::API::Conversation
     include Dialog::API::Interlocutor
@@ -16,6 +20,8 @@ module Dialog
 
     # @param options [Hash]
     def initialize(options = {})
+      super() # Important for concurrent ruby
+
       options = Dialog.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
