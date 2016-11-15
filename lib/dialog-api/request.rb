@@ -26,8 +26,8 @@ module Dialog
     # @return [HTTP::Client]
     # @raise [ArgumentError]
     def request(method, path, params: {}, body: {})
-      raise ArgumentError, ("Please configure Dialog.api_token first") unless api_token
-      raise ArgumentError, ("Please configure Dialog.bot_id first") unless bot_id
+      raise ArgumentError, ("Please configure Dialog.api_token first") if api_token.nil? || api_token.empty?
+      raise ArgumentError, ("Please configure Dialog.bot_id first") if bot_id.nil? || bot_id.empty?
 
       headers = {
         'Accept'        => "application/json",
