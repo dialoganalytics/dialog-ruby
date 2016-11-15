@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.test_files    = s.files.grep(%r{^(spec)/})
 
   s.add_dependency 'http', '~> 2.0'
+  s.add_dependency 'concurrent-ruby'
 end
