@@ -124,6 +124,12 @@ messenger_dialog = Dialog.new(api_token: ENV['DIALOG_API_TOKEN'], bot_id: 'messe
 kik_dialog = Dialog.new(api_token: ENV['DIALOG_API_TOKEN'], bot_id: 'kik_bot_id')
 ```
 
+## Performance
+
+This library if built to support high performance environments. It is safe to use dialog-ruby on a web server serving hundreds of requests per second.
+
+Every time `track` is called an asynchronous HTTP request is sent, allowing non-blocking usage and fast response latencies.
+
 ## Development
 
 Run all tests:
