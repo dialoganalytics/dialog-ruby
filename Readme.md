@@ -9,6 +9,12 @@ A ruby client for the [Dialog](https://dialoganalytics.com) API.
 
 See the [API docs](https://docs.dialoganalytics.com).
 
+## Examples
+
+- [Facebook Messenger](https://github.com/dialoganalytics/messenger-ruby-example)
+- [Twilio SMS](https://github.com/dialoganalytics/twilio-sms-ruby-example)
+- Kik (soon)
+
 ## Installation
 
 ```bash
