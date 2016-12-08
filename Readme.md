@@ -11,9 +11,12 @@ See the [API docs](https://docs.dialoganalytics.com).
 
 ## Examples
 
+- Amazon Alexa (soon)
+- Google Actions (soon)
 - [Facebook Messenger](https://github.com/dialoganalytics/messenger-ruby-example)
-- [Twilio SMS](https://github.com/dialoganalytics/twilio-sms-ruby-example)
 - Kik (soon)
+- Twilio Programmable Chat (soon)
+- [Twilio SMS](https://github.com/dialoganalytics/twilio-sms-ruby-example)
 
 ## Installation
 
