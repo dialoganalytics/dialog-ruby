@@ -51,7 +51,26 @@ dialog = Dialog.new({
 See [docs.dialoganalytics.com/reference/track](https://docs.dialoganalytics.com/reference/track)
 
 ```ruby
-payload = {}
+payload =
+  message: {
+    distinct_id: "8c2c6efb-89bf-431d-b297-b9dce912be70",
+    platform: "messenger",
+    provider: "messenger",
+    mtype: "text",
+    sent_at: 1482266741.18,
+    properties: {
+      text: "Hello world"
+    }
+  },
+  conversation: {
+    distinct_id: "da58db1e-da73-4628-9dd6-11a524cc3f80"
+  },
+  creator: {
+    distinct_id: "fe0e6a28-3966-4203-8b8e-7b9e1dabe93e",
+    type: "interlocutor"
+  }
+}
+
 dialog.track(payload)
 ```
 
