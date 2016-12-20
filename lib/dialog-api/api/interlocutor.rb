@@ -16,10 +16,10 @@ module Dialog
       end
 
       # Creates an interlocutor
-      # @param attributes [Hash]
+      # @param payload [Hash]
       # @return [Hash]
-      def create_interlocutor(attributes)
-        post("b/#{bot_id}/interlocutors", body: { interlocutor: attributes })
+      def create_interlocutor(payload)
+        post("b/#{bot_id}/interlocutors", body: { interlocutor: payload })
       end
     end
   end
