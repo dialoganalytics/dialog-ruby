@@ -5,10 +5,6 @@ A ruby client for the [Dialog](https://dialoganalytics.com) API.
 [![Dependency Status](https://gemnasium.com/badges/github.com/dialoganalytics/dialog-ruby.svg)](https://gemnasium.com/github.com/dialoganalytics/dialog-ruby)
 [![Gem Version](https://badge.fury.io/rb/dialog-api.svg)](https://badge.fury.io/rb/dialog-api)
 
-## Documentation
-
-See the [API docs](https://docs.dialoganalytics.com).
-
 ## Examples
 
 - Amazon Alexa (soon)
@@ -145,6 +141,10 @@ messenger_dialog = Dialog.new(api_token: ENV['DIALOG_API_TOKEN'], bot_id: 'messe
 
 kik_dialog = Dialog.new(api_token: ENV['DIALOG_API_TOKEN'], bot_id: 'kik_bot_id')
 ```
+
+## Documentation
+
+See the [API docs](https://docs.dialoganalytics.com).
 
 ## Development
 
