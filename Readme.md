@@ -33,7 +33,7 @@ This library needs to be configured with your API token which is available in yo
 ```ruby
 dialog = Dialog.new({
   api_token: ENV['DIALOG_API_TOKEN'],
-  bot_id: 'bot_id',
+  bot_id: ENV['DIALOG_BOT_ID'],
   on_error: Proc.new do |status, message, detail|
     p [status, message, detail]
   end
