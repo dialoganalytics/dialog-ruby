@@ -32,7 +32,7 @@ gem 'dialog-api', require: 'dialog-api'
 
 ## Usage
 
-This library needs to be configured with your API token which is available in your [personal account](http://app.dialoganalytics.com/users/edit) and a bot ID.
+This library needs to be configured with your API token which is available in your [personal account](http://app.dialoganalytics.com/users/edit), and a bot ID.
 
 ```ruby
 dialog = Dialog.new({
