@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'rspec'
 require 'webmock/rspec'
 
-require 'dialog'
+require 'dialog-api'
 
 RSpec.configure do |config|
   config.filter_run focus: true
