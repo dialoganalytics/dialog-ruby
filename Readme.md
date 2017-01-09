@@ -10,6 +10,7 @@ A ruby client for the [Dialog](https://dialoganalytics.com) API.
 - Amazon Alexa (soon)
 - Google Actions (soon)
 - [Facebook Messenger](https://github.com/dialoganalytics/messenger-ruby-example)
+- [Telegram](https://github.com/dialoganalytics/telegram-ruby-example)
 - Kik (soon)
 - Twilio Programmable Chat (soon)
 - [Twilio SMS](https://github.com/dialoganalytics/twilio-sms-ruby-example)
