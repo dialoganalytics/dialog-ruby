@@ -37,6 +37,10 @@ module Dialog
 
       response = Http.headers(headers).send(method, path, params: params, json: body)
 
+      if debug
+        p response
+      end
+
       # Pass on errors when HTTP status included in 400 to 599
       if (400..599).include?(response.code)
         begin
