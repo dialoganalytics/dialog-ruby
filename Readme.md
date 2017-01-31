@@ -50,9 +50,8 @@ See [docs.dialoganalytics.com/reference/track](https://docs.dialoganalytics.com/
 ```ruby
 payload =
   message: {
-    distinct_id: "8c2c6efb-89bf-431d-b297-b9dce912be70",
     platform: "messenger",
-    provider: "messenger",
+    provider: "dialog-ruby",
     mtype: "text",
     sent_at: 1482266741.18,
     properties: {
