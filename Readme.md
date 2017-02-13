@@ -70,6 +70,14 @@ payload =
 dialog.track(payload)
 ```
 
+### Events
+
+Send events to Dialog to keep track of your custom logic. Optionally pass an `interlocutor_id` to tie the event to one of your bot's interlocutors. See [docs.dialoganalytics.com/reference/event#create](https://docs.dialoganalytics.com/reference/event#create)
+
+```ruby
+dialog.event('subscribed', Time.now.to_f, 'interlocutor_id', { custom: 'value' })
+```
+
 ### Tracking clicks
 
 Track links (or anything with a URL) clicked by users inside a conversation. Pass the conversation's distinct Id (provided by the platform or provider) and the `url`. See [docs.dialoganalytics.com/reference/click-tracking](https://docs.dialoganalytics.com/reference/click-tracking/)

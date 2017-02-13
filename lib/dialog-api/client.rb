@@ -1,5 +1,6 @@
 require 'dialog-api/request'
 require 'dialog-api/api/conversation'
+require 'dialog-api/api/event'
 require 'dialog-api/api/interlocutor'
 require 'dialog-api/api/message'
 require 'dialog-api/api/track'
@@ -8,6 +9,7 @@ module Dialog
   class Client
     include Dialog::Request
     include Dialog::API::Conversation
+    include Dialog::API::Event
     include Dialog::API::Interlocutor
     include Dialog::API::Message
     include Dialog::API::Track
