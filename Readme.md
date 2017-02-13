@@ -134,12 +134,6 @@ List all interlocutors. See [docs.dialoganalytics.com/reference/interlocutor#lis
 Dialog::Interlocutor.list
 ```
 
-Create an interlocutor. See [docs.dialoganalytics.com/reference/interlocutor#create](https://docs.dialoganalytics.com/reference/interlocutor#create)
-
-```ruby
-Dialog::Interlocutor.create(params)
-```
-
 ### Multiple clients
 
 Different parts of your application may require different types of configurations or even sending to multiple bots. In that case, you can initialize multiple instances of Dialog with different settings:

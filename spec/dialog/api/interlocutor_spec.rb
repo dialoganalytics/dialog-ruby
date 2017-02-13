@@ -26,30 +26,4 @@ describe Dialog::API::Interlocutor do
       expect(client.interlocutor(id)).to be_a(Hash)
     end
   end
-
-  describe '#create_interlocutor' do
-    let(:id) { 1 }
-
-    context "with valid params" do
-      before do
-        stub_request(:post, /api.dialoganalytics.com/)
-          .to_return(status: 200, body: "{}", headers: { 'Content-Type'=>'application/json' })
-      end
-
-      it "returns an interlocutor object" do
-        expect(client.create_interlocutor(id)).to be_a(Hash)
-      end
-    end
-
-    context "with invalid params" do
-      before do
-        stub_request(:post, /api.dialoganalytics.com/)
-          .to_return(status: 422, body: { error: "something" }.to_json, headers: { 'Content-Type'=>'application/json' })
-      end
-
-      it "returns an error" do
-        expect { client.create_interlocutor(id) }.to raise_error(Dialog::Error)
-      end
-    end
-  end
 end
