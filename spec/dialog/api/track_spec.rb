@@ -14,16 +14,5 @@ describe Dialog::API::Track do
         expect(client.track({})).to be_nil
       end
     end
-
-    context "with invalid params" do
-      before do
-        stub_request(:post, /api.dialoganalytics.com/)
-          .to_return(status: 422, headers: { 'Content-Type'=>'application/json' }, body: { error: "RecordInvalid" }.to_json )
-      end
-
-      it "raises an error" do
-        expect { client.track({}) }.to raise_error(Dialog::Error)
-      end
-    end
   end
 end
