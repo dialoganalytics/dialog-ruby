@@ -62,8 +62,17 @@ payload =
     distinct_id: "da58db1e-da73-4628-9dd6-11a524cc3f80"
   },
   creator: {
-    distinct_id: "fe0e6a28-3966-4203-8b8e-7b9e1dabe93e",
-    type: "interlocutor"
+    distinct_id: "d5ae3f5f-1645-40c3-a38a-02382cd0ee49",
+    type: "interlocutor",
+    username: "@elon",
+    first_name: "Elon",
+    last_name: "Musk",
+    email: "elon@spacex.com",
+    gender: "male",
+    locale: "US",
+    phone: "1234567890",
+    profile_picture: "http://spacex.com/elon.jpg",
+    timezone: -5
   }
 }
 
