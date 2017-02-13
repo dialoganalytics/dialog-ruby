@@ -97,13 +97,13 @@ var link = {
 Retrieve a message. See [docs.dialoganalytics.com/reference/message#retrieve](https://docs.dialoganalytics.com/reference/message#retrieve)
 
 ```ruby
-Dialog::Message.retrieve(conversationId, messageId)
+dialog.message(conversation_id, message_id)
 ```
 
 List all messages in a conversation. See [docs.dialoganalytics.com/reference/message#list](https://docs.dialoganalytics.com/reference/message#list)
 
 ```ruby
-Dialog::Message.list(conversationId)
+dialog.messages(conversation_id)
 ```
 
 ### Conversations
@@ -111,13 +111,13 @@ Dialog::Message.list(conversationId)
 Retrieve a conversation. See [docs.dialoganalytics.com/reference/conversation#retrieve](https://docs.dialoganalytics.com/reference/conversation#retrieve)
 
 ```ruby
-Dialog::Conversation.retrieve(conversationId)
+dialog.conversation(conversation_id)
 ```
 
 List all conversations. See [docs.dialoganalytics.com/reference/conversation#list](https://docs.dialoganalytics.com/reference/conversation#list)
 
 ```ruby
-Dialog::Conversation.list
+dialog.conversations
 ```
 
 ### Interlocutors
@@ -125,13 +125,13 @@ Dialog::Conversation.list
 Retrieve an interlocutor. See [docs.dialoganalytics.com/reference/interlocutor#retrieve](https://docs.dialoganalytics.com/reference/interlocutor#retrieve)
 
 ```ruby
-Dialog::Interlocutor.retrieve(interlocutorId)
+dialog.interlocutor(interlocutor_id)
 ```
 
 List all interlocutors. See [docs.dialoganalytics.com/reference/interlocutor#list](https://docs.dialoganalytics.com/reference/interlocutor#list)
 
 ```ruby
-Dialog::Interlocutor.list
+dialog.interlocutors
 ```
 
 ### Multiple clients
