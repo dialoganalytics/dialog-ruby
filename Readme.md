@@ -100,13 +100,8 @@ dialog.event('subscribed', Time.now.to_f, 'interlocutor_id', { custom: 'value' }
 Track links (or anything with a URL) clicked by users inside a conversation. Pass the conversation's distinct Id (provided by the platform or provider) and the `url`. See [docs.dialoganalytics.com/reference/click-tracking](https://docs.dialoganalytics.com/reference/click-tracking/)
 
 ```ruby
-conversation_id = '8aa172f13bf8'
-
-var link = {
-  "type": "web_url",
-  "url": dialog.link(conversation_id, 'http://example.com'), # https://api.dialoganalytics.com/v1/click/8aa172f13bf8?url=http%3A%2F%2Fexample.com
-  "title": "View Item"
-}
+dialog.link('conversation_id', 'http://example.com')
+# => https://api.dialoganalytics.com/v1/click/8aa172f13bf8?url=http%3A%2F%2Fexample.com
 ```
 
 ### Messages
