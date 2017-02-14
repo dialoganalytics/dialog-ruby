@@ -54,6 +54,14 @@ payload =
     provider: "dialog-ruby",
     mtype: "text",
     sent_at: 1482266741.18,
+    nlp: {
+      intents: [
+        {
+          name: "order.create",
+          confidence: 0.98
+        }
+      ]
+    },
     properties: {
       text: "Hello world"
     }
