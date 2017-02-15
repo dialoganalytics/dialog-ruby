@@ -25,12 +25,12 @@ module Dialog
     end
 
     # Wraps an url into a trackable Dialog url
-    # @param id [String] A conversation distinct Id provided by the platform or the provider
     # @param url [String]
+    # @param id [String] An interlocutor distinct Id provided by the platform or the provider
     # @return [String]
-    def link(id, url)
+    def link(url, id)
       escaped = URI.escape(url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
-      URI.join(api_endpoint, "v1/click/", id, "?url=#{escaped}").to_s
+      URI.join(api_endpoint, "v1/b/", bot_id, "/click/", "?id=#{id}&url=#{escaped}").to_s
     end
   end
 end
