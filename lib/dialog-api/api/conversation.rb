@@ -9,7 +9,7 @@ module Dialog
       end
 
       # Retrieves a conversation
-      # @param id [String]
+      # @param id [String] Conversation Id
       # @return [Hash]
       def conversation(id)
         get("b/#{bot_id}/conversations/#{id}")

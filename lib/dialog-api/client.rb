@@ -25,7 +25,7 @@ module Dialog
     end
 
     # Wraps an url into a trackable Dialog url
-    # @param url [String]
+    # @param url [String] An URL to redirect the user to
     # @param id [String] An interlocutor distinct Id provided by the platform or the provider
     # @return [String]
     def link(url, id)

@@ -16,7 +16,7 @@ module Dialog
       end
 
       # Updates an interlocutor
-      # @param id [String] Interlocutor distinct Id
+      # @param id [String] Interlocutor Id
       # @param payload [Hash]
       # @return [Hash]
       def update_interlocutor(id, payload)

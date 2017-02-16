@@ -97,20 +97,24 @@ dialog.event('subscribed', Time.now.to_f, 'interlocutor_id', { custom: 'value' }
 
 ### Tracking clicks
 
-Track links clicked by interlocutors inside a conversation. Pass the interlocutor's distinct Id (provided by the platform or provider) and the `url`. See [docs.dialoganalytics.com/reference/click-tracking](https://docs.dialoganalytics.com/reference/click-tracking/)
+Track links clicked by interlocutors inside a conversation. Pass the Interlocutor's `distinct_id` (provided by the platform or provider) and the `url`. See [docs.dialoganalytics.com/reference/click-tracking](https://docs.dialoganalytics.com/reference/click-tracking/)
 
 ```ruby
-dialog.link('http://example.com', user.id)
+dialog.link('http://example.com', interlocutor_distinct_id)
 # => https://api.dialoganalytics.com/v1/b/7928374/clicks/?id=123456&url=http%3A%2F%2Fexample.com
 ```
 
 ### Messages
 
-Retrieve a message. See [docs.dialoganalytics.com/reference/message#retrieve](https://docs.dialoganalytics.com/reference/message#retrieve)
+#### Retrieve a message
+
+See [docs.dialoganalytics.com/reference/message#retrieve](https://docs.dialoganalytics.com/reference/message#retrieve)
 
 ```ruby
 dialog.message(conversation_id, message_id)
 ```
+
+#### List all messages
 
 List all messages in a conversation. See [docs.dialoganalytics.com/reference/message#list](https://docs.dialoganalytics.com/reference/message#list)
 
@@ -120,13 +124,17 @@ dialog.messages(conversation_id)
 
 ### Conversations
 
-Retrieve a conversation. See [docs.dialoganalytics.com/reference/conversation#retrieve](https://docs.dialoganalytics.com/reference/conversation#retrieve)
+#### Retrieve a conversation
+
+See [docs.dialoganalytics.com/reference/conversation#retrieve](https://docs.dialoganalytics.com/reference/conversation#retrieve)
 
 ```ruby
 dialog.conversation(conversation_id)
 ```
 
-List all conversations. See [docs.dialoganalytics.com/reference/conversation#list](https://docs.dialoganalytics.com/reference/conversation#list)
+#### List all conversations
+
+See [docs.dialoganalytics.com/reference/conversation#list](https://docs.dialoganalytics.com/reference/conversation#list)
 
 ```ruby
 dialog.conversations
@@ -134,16 +142,20 @@ dialog.conversations
 
 ### Interlocutors
 
-Retrieve an interlocutor. See [docs.dialoganalytics.com/reference/interlocutor#retrieve](https://docs.dialoganalytics.com/reference/interlocutor#retrieve)
+#### List all interlocutors
 
-```ruby
-dialog.interlocutor(interlocutor_id)
-```
-
-List all interlocutors. See [docs.dialoganalytics.com/reference/interlocutor#list](https://docs.dialoganalytics.com/reference/interlocutor#list)
+See [docs.dialoganalytics.com/reference/interlocutor#list](https://docs.dialoganalytics.com/reference/interlocutor#list)
 
 ```ruby
 dialog.interlocutors
+```
+
+#### Retrieve an interlocutor
+
+See [docs.dialoganalytics.com/reference/interlocutor#retrieve](https://docs.dialoganalytics.com/reference/interlocutor#retrieve)
+
+```ruby
+dialog.interlocutor(interlocutor_id)
 ```
 
 #### Update an interlocutor
@@ -151,7 +163,7 @@ dialog.interlocutors
 See [docs.dialoganalytics.com/reference/interlocutor#update](https://docs.dialoganalytics.com/reference/interlocutor#update)
 
 ```ruby
-dialog.update_interlocutor(interlocutor_distinct_id, params);
+dialog.update_interlocutor(interlocutor_id, params)
 ```
 
 #### Creating an interlocutor

@@ -3,7 +3,7 @@ module Dialog
     module Message
 
       # Lists all messages associated to a conversation
-      # @param conversation_id [String]
+      # @param conversation_id [String] Conversation Id
       # @return
       def messages(conversation_id)
         get("b/#{bot_id}/conversations/#{conversation_id}/messages")
@@ -11,7 +11,7 @@ module Dialog
 
       # Retrieves a message
       # @param id [String]
-      # @param conversation_id [String]
+      # @param conversation_id [String] Conversation Id
       # @return
       def message(id, conversation_id)
         get("b/#{bot_id}/conversations/#{conversation_id}/messages/#{id}")
