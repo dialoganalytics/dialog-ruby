@@ -146,6 +146,13 @@ List all interlocutors. See [docs.dialoganalytics.com/reference/interlocutor#lis
 dialog.interlocutors
 ```
 
+#### Update an interlocutor
+
+See [docs.dialoganalytics.com/reference/interlocutor#update](https://docs.dialoganalytics.com/reference/interlocutor#update)
+
+```ruby
+dialog.update_interlocutor(interlocutor_distinct_id, params);
+```
 
 #### Creating an interlocutor
 

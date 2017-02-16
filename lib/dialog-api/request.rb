@@ -20,6 +20,15 @@ module Dialog
       request(:post, URI.parse(api_endpoint).merge(path), params: params, body: body)
     end
 
+    # Performs a HTTP Patch request
+    #
+    # @param path [String]
+    # @param params [Hash]
+    # @param body [Hash]
+    def patch(path, params: {}, body: {})
+      request(:patch, URI.parse(api_endpoint).merge(path), params: params, body: body)
+    end
+
 
     private
 

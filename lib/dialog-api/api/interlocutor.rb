@@ -15,8 +15,12 @@ module Dialog
         get("b/#{bot_id}/interlocutors#{id}")
       end
 
+      # Updates an interlocutor
+      # @param id [String] Interlocutor distinct Id
       # @param payload [Hash]
       # @return [Hash]
+      def update_interlocutor(id, payload)
+        patch("b/#{bot_id}/interlocutors/#{id}", body: { interlocutor: payload })
       end
     end
   end
