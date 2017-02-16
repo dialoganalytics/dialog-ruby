@@ -9,10 +9,10 @@ module Dialog
       end
 
       # Retrieves an interlocutor
-      # @param id [String] Interlocutor Id
+      # @param id [String] Interlocutor distinct Id
       # @return [Hash]
       def interlocutor(id)
-        get("b/#{bot_id}/interlocutors#{id}")
+        get("b/#{bot_id}/interlocutors/#{id}")
       end
 
       # Updates an interlocutor
