@@ -15,7 +15,7 @@ describe Dialog::API::Event do
           .to_return(status: 200, body: "{}", headers: { 'Content-Type'=>'application/json' })
       end
 
-      let(:event_params) { {name: 'subscribed', created_at: Time.now.to_f, interlocutor_id: SecureRandom.uuid, properties: { custom: 'value' } }}
+      let(:event_params) { {name: 'subscribed', created_at: Time.now.to_f, id: SecureRandom.uuid, properties: { custom: 'value' } }}
 
       it "returns an event object" do
         expect(client.create_event(event_params)).to be_a(Hash)

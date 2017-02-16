@@ -8,8 +8,8 @@ module Dialog
       # @param interlocutor_distinct_id [String] Interlocutor distinct Id
       # @param properties [Hash] Event properties
       # @return [Hash]
-      def event(name, created_at, interlocutor_id, properties)
-        create_event({ name: name, created_at: created_at, interlocutor_id: interlocutor_id, properties: properties })
+      def event(name, created_at, interlocutor_distinct_id, properties)
+        create_event({ name: name, created_at: created_at, id: interlocutor_distinct_id, properties: properties })
       end
 
       # Creates an event
