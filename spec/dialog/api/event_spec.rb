@@ -3,8 +3,16 @@ require 'spec_helper'
 describe Dialog::API::Event do
   let(:client) { Dialog.new(api_token: 'token', bot_id: 'id') }
 
-  describe '#create_event' do
-    it 'calls create_event', skip: true do
+  describe '#event' do
+    context "with valid params" do
+      before do
+        stub_request(:post, /api.dialoganalytics.com/)
+          .to_return(status: 200, body: "{}", headers: { 'Content-Type'=>'application/json' })
+      end
+
+      it "returns an event object" do
+        expect(client.event('subscribed', Time.now.to_f, SecureRandom.uuid, { custom: 'value' })).to be_a(Hash)
+      end
     end
   end
 
