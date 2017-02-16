@@ -146,6 +146,11 @@ List all interlocutors. See [docs.dialoganalytics.com/reference/interlocutor#lis
 dialog.interlocutors
 ```
 
+
+#### Creating an interlocutor
+
+To create an interlocutor, use the `track` endpoint. An interlocutor must initially be created in association with a conversation. See [docs.dialoganalytics.com/reference/track](https://docs.dialoganalytics.com/reference/track/)
+
 ### Multiple clients
 
 Different parts of your application may require different types of configurations or even sending to multiple bots. In that case, you can initialize multiple instances of Dialog with different settings:
