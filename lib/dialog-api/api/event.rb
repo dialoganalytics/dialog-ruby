@@ -4,12 +4,11 @@ module Dialog
 
       # Helper method to create an event
       # @param name [String] Event name
-      # @param created_at [Float] Unix datetime in milliseconds
       # @param interlocutor_distinct_id [String] Interlocutor distinct Id
       # @param properties [Hash] Event properties
       # @return [Hash]
-      def event(name, created_at, interlocutor_distinct_id, properties)
-        create_event({ name: name, created_at: created_at, id: interlocutor_distinct_id, properties: properties })
+      def event(name, interlocutor_distinct_id, properties)
+        create_event({ name: name, created_at: Time.now.to_f, id: interlocutor_distinct_id, properties: properties })
       end
 
       # Creates an event
