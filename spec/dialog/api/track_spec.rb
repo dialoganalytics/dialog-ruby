@@ -29,14 +29,24 @@ describe Dialog::API::Track do
   end
 
   describe '#track' do
-    context "with valid params" do
-      before do
-        stub_request(:post, /api.dialoganalytics.com/)
-          .to_return(status: 201, headers: { 'Content-Type'=>'application/json' })
-      end
+    before do
+      stub_request(:post, /api.dialoganalytics.com/)
+      .to_return(status: 201, headers: { 'Content-Type'=>'application/json' })
+    end
 
-      it "returns nothing" do
-        expect(client.track({})).to be_nil
+    context "without a context" do
+      before { client.attach({}) }
+
+      it "returns the payload" do
+        expect(client.track({ message: { platform: "messenger" }})).to eq({ message: { platform: "messenger" }})
+      end
+    end
+
+    context "with a context" do
+      before { client.attach("name") }
+
+      it "returns the payload" do
+        expect(client.track({ message: { platform: "messenger" }})).to eq({ message: { platform: "messenger", name: "name" }})
       end
     end
   end
