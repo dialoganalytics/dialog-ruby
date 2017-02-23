@@ -11,7 +11,7 @@ describe Dialog::API::Event do
       end
 
       it "returns an event object" do
-        expect(client.event('subscribed', Time.now.to_f, SecureRandom.uuid, { custom: 'value' })).to be_a(Hash)
+        expect(client.event('subscribed', SecureRandom.uuid, { custom: 'value' })).to be_a(Hash)
       end
     end
   end
