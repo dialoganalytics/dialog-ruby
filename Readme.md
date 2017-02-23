@@ -57,13 +57,13 @@ payload =
     nlp: {
       intents: [
         {
-          name: "order.create",
+          name: "rocket.launch",
           confidence: 0.98
         }
       ]
     },
     properties: {
-      text: "Hello world"
+      text: "Launch some space rockets"
     }
   },
   conversation: {
@@ -89,15 +89,15 @@ dialog.track(payload)
 
 ### Events
 
-Send events to Dialog to keep track of your custom logic. Optionally pass an Interlocutor's `distinct_id` to tie the event to one of your bot's interlocutors. See [docs.dialoganalytics.com/reference/event#create](https://docs.dialoganalytics.com/reference/event#create)
+Send events to Dialog to keep track of your custom logic. Optionally pass an Interlocutor's distinct id to tie the event to one of your bot's interlocutors. See [docs.dialoganalytics.com/reference/event#create](https://docs.dialoganalytics.com/reference/event#create)
 
 ```ruby
 dialog.event('subscribed', Time.now.to_f, 'interlocutor_distinct_id', { custom: 'value' })
 ```
 
-### Tracking clicks
+### Clicks
 
-Track links clicked by interlocutors inside a conversation. Pass the Interlocutor's `distinct_id` (provided by the platform or provider) and the `url`. See [docs.dialoganalytics.com/reference/click-tracking](https://docs.dialoganalytics.com/reference/click-tracking/)
+Record clicks by interlocutors inside a conversation using a trackable link. For every links that needs to be tracked, generate a trackable URL by passing the interlocutor's distinct Id (provided by the platform or provider) and the `url` to the `link` method. See [docs.dialoganalytics.com/reference/click-tracking](https://docs.dialoganalytics.com/reference/click-tracking/)
 
 ```ruby
 dialog.link('http://example.com', interlocutor_distinct_id)
