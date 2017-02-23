@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'rspec'
 require 'webmock/rspec'
+require 'active_support/core_ext/object/blank'
 
 require 'dialog-api'
 
