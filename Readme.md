@@ -48,7 +48,7 @@ dialog = Dialog.new({
 See [docs.dialoganalytics.com/reference/track](https://docs.dialoganalytics.com/reference/track)
 
 ```ruby
-payload =
+payload = {
   message: {
     platform: "messenger",
     provider: "dialog-ruby",
