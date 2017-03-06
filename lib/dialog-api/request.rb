@@ -40,7 +40,7 @@ module Dialog
 
       headers = {
         'Accept'        => "application/json",
-        'Authorization' => "Api-Key #{api_token}",
+        'Authorization' => "Token #{api_token}",
         'User-Agent'    => Dialog.user_agent
       }
 
